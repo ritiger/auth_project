@@ -24,13 +24,14 @@ class Auth extends CI_Controller{
             // Here we will save user record in db
 
             $this->load->model('Auth_model');
-            $formArray = array();
-            $formArray['first_name'] = $this->input->post('first_name');
-            $formArray['last_name'] = $this->input->post('last_name');
-            $formArray['email'] = $this->input->post('email');
-            $formArray['phone'] = $this->input->post('phone');
-            $formArray['password'] = md5($this->input->post('password'));
-            $formArray['created_at'] = date('Y-m-d H:i:s');
+            $formArray = array(
+            'first_name' => $this->input->post('first_name'),
+            'last_name' => $this->input->post('last_name'),
+            'email' => $this->input->post('email'),
+            'phone' => $this->input->post('phone'),
+            'password' => md5($this->input->post('password')),
+            'created_at' => date('Y-m-d H:i:s')
+            );
             // $formArray['updated_at'] = date('Y-m-d H:i:s');
             $this->Auth_model->create($formArray);
 

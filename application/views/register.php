@@ -13,12 +13,15 @@
 <body>
 
 <div class="container">
-  <?php
+  <!-- <?php
       $msg = $this->session->flashdata('msg');
       if($msg != "") {
         echo "<div class='alert alert-success'>$msg</div>";
       }  
-  ?>
+  ?> -->
+  <?php if($this->session->flashdata('msg')): ?>
+    <h4 class="alert alert-success"><?php echo $this->session->flashdata('msg'); ?></h4>
+  <?php endif; ?>
   <div class="col-md-6">
     <div class="card mt-4">
       <div class="card-header">
