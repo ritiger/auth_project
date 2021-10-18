@@ -68,6 +68,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
+
+	<div>
+		<a href='<?= base_url('/') ?>'>Welcome</a>
+		<a href='<?= base_url('/auth/register') ?>'>Register</a>
+	</div>
 	<h1>Welcome to CodeIgniter!</h1>
 
 	<div id="body">

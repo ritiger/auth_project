@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="<?php echo base_url().'assets/css/style.css';?>">
   </head>
 <body>
-
+	<div>
+		<a href='<?= base_url('/') ?>'>Welcome</a>
+		<a href='<?= base_url('/auth/register') ?>'>Register</a>
+	</div>
 <div class="container">
   <!-- <?php
       $msg = $this->session->flashdata('msg');
@@ -19,7 +22,7 @@
         echo "<div class='alert alert-success'>$msg</div>";
       }  
   ?> -->
-  <?php if($this->session->flashdata('msg')): ?>
+  <?php if(!empty($this->session->flashdata('msg'))): ?>
     <h4 class="alert alert-success"><?php echo $this->session->flashdata('msg'); ?></h4>
   <?php endif; ?>
   <div class="col-md-6">
