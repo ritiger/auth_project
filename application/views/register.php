@@ -22,7 +22,7 @@
         echo "<div class='alert alert-success'>$msg</div>";
       }  
   ?> -->
-  <?php if($this->session->flashdata('msg')): ?>
+  <?php if(!empty($this->session->flashdata('msg'))): ?>
     <h4 class="alert alert-success"><?php echo $this->session->flashdata('msg'); ?></h4>
   <?php endif; ?>
   <div class="col-md-6">
