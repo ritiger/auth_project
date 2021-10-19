@@ -22,7 +22,7 @@
         echo "<div class='alert alert-success'>$msg</div>";
       }  
   ?> -->
-  <?php if(!empty($this->session->flashdata('msg'))): ?>
+  <?php if($this->session->flashdata('msg')): ?>
     <h4 class="alert alert-success"><?php echo $this->session->flashdata('msg'); ?></h4>
   <?php endif; ?>
   <div class="col-md-6">
@@ -31,7 +31,7 @@
          Register Here
       </div>
       <form action="<?php echo base_url().'index.php/Auth/register'?>" name="registerForm" id="registerForm" method="post">
-        <div class="card-body register">
+        <div class="card-body register" style="background: lightgray">
           <p class="card-text">Please fill with your details</p>
           <div class="form-group">
             <label for="name">First Name</label>
@@ -59,12 +59,16 @@
             <p class="invalid-feedback"><?php echo strip_tags(form_error('password'));?></p>
           </div>
           <div class="form-group">
+            <label for="name">Confirm Password</label>
+            <input type="password" name="cpassword" id="cpassword" class="form-control <?php echo (form_error('cpassword') != "") ? 'is-invalid' : '';?>" value="<?php echo set_value('cpassword')?>" placeholder="Confirm Password">
+            <p class="invalid-feedback"><?php echo strip_tags(form_error('cpassword'));?></p>
+          </div>
+          <div class="form-group">
             <button class="btn btn-block btn-primary">REGISTER NOW</button>
           </div>
         </div>
       </form>
     </div>
-
   </div>
 </div>
     
